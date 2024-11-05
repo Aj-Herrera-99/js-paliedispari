@@ -12,11 +12,11 @@ const welcomeText = "Ottimo! Hai scelto: " + game;
 
 switch(game){
     case "palindrome":
-        displayText(welcomeText);
+        console.log(welcomeText);
         palindrome();
         break;
     case "evenodd":
-        displayText(welcomeText);
+        console.log(welcomeText);
         evenOdd();
         break;
     default:

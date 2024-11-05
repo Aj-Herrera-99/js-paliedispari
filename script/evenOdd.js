@@ -11,33 +11,39 @@ function evenOdd() {
   console.log("GIOCHIAMO A PARI E DISPARI");
   // inizializzazione con prompt e dichiarazioni
   let choiceUser = prompt("Scegli pari o dispari");
+  const noChoiceText = "Non hai scelto nè pari nè dispari";
 
-  const numberUser = numberFromPromptWithRange(1, 5);
-  const numberBot = getRndInteger(1, 5);
+  choiceUser = choiceUser.trim();
+  if (choiceUser !== null && choiceUser.length) {
+    const numberUser = numberFromPromptWithRange(1, 5);
+    const numberBot = getRndInteger(1, 5);
 
-  const sum = numberUser + numberBot;
-  const victoryText = "Hai vinto!!";
-  const defeatText = "Hai perso ! :(";
+    const sum = numberUser + numberBot;
+    const victoryText = "Hai vinto!!";
+    const defeatText = "Hai perso ! :(";
 
-  choiceUser = choiceUser.toLocaleLowerCase();
-  console.log(
-    `    Scelta dell'utente: ${choiceUser}
+    choiceUser = choiceUser.toLocaleLowerCase();
+    console.log(
+      `    Scelta dell'utente: ${choiceUser}
     Numero dell'utente: ${numberUser}
     Numero del bot: ${numberBot}
     Somma dei due numeri: ${sum}
     `
-  );
+    );
 
-  // uso costrutto switch che prende come parametro la scelta dell'utente
-  switch (choiceUser) {
-    case "pari":
-      isEven(sum) ? displayText(victoryText) : displayText(defeatText);
-      break;
-    case "dispari":
-      !isEven(sum) ? displayText(victoryText) : displayText(defeatText);
-      break;
-    default:
-      console.log("Non hai scelto nè pari nè dispari");
+    // uso costrutto switch che prende come parametro la scelta dell'utente
+    switch (choiceUser) {
+      case "pari":
+        isEven(sum) ? console.log(victoryText) : console.log(defeatText);
+        break;
+      case "dispari":
+        !isEven(sum) ? console.log(victoryText) : console.log(defeatText);
+        break;
+      default:
+        console.log(noChoiceText);
+    }
+  } else {
+    console.log(noChoiceText);
   }
 }
 //*//////////////////////////// */
@@ -70,8 +76,4 @@ function isEven(num) {
 // funzione getRndInteger presa da w3schools
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function displayText(text) {
-  console.log(text);
 }
