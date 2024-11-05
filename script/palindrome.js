@@ -7,7 +7,7 @@ Creare una funzione per capire se la parola inserita è palindroma
 
 console.log("ES STRINGA PALINDROMA");
 // inizializzazione con prompt
-const word = prompt("Inserisci una parola");
+const word = prompt("Inserisci una parola");    //! assunzione: utente non lascia mai null
 // chiamata di funzione per verificare se la stringa passata come parametro è palindroma
 // e salvo il valore ritornato in una variabile
 let result = isPalindrome(word); //* funzione cheatcode
