@@ -10,26 +10,57 @@ console.log("ES STRINGA PALINDROMA");
 const word = prompt("Inserisci una parola");
 // chiamata di funzione per verificare se la stringa passata come parametro è palindroma
 // e salvo il valore ritornato in una variabile
-const result = isPalindrome(word);
+let result = isPalindrome(word); //* funzione cheatcode
 // output
-if(result){
-    console.log(word + " is palindrome");
+console.log("Cheatcode:");
+if (result) {
+  console.log(word + " is palindrome");
 } else {
-    console.log(word + " is not palindrome");
+  console.log(word + " is not palindrome");
 }
+
+result = isPalindrome2(word); //* con two pointers
+// output
+console.log("Two pointers:");
+if (result) {
+  console.log(word + " is palindrome");
+} else {
+  console.log(word + " is not palindrome");
+}
+
 console.log("\n");
 
 //* FUNCTIONS
 /**
- * 
- * @param {string} str 
- * @returns {Boolean}
+ * cheatcode
+ * @param {string} str
+ * @returns {boolean}
  */
-function isPalindrome(str){
-    str = str.toLocaleLowerCase();          //metto in minuscolo tutti i caratteri
-    return str === str.split("").reverse().join(""); 
-    //split("") mi converte la stringa in un array con valori i caratteri della stringa
-    //reverse() mi gira al contrario i valori dell'array
-    //join("") mi prende i valori dell'array e li inserisce in ordine in una stringa senza spaziature
-    //ritorna true se la stringa è uguale alla stringa stessa girata al contrario
+function isPalindrome(str) {
+  str = str.toLocaleLowerCase(); //metto in minuscolo tutti i caratteri
+  return str === str.split("").reverse().join("");
+  //split("") mi converte la stringa in un array con valori i caratteri della stringa
+  //reverse() mi gira al contrario i valori dell'array
+  //join("") mi prende i valori dell'array e li inserisce in ordine in una stringa senza spaziature
+  //ritorna true se la stringa è uguale alla stringa stessa girata al contrario
+}
+
+/**
+ * two pointers method
+ * @param {string} str
+ * @returns {boolean}
+ */
+function isPalindrome2(str) {
+  let left = 0;
+  let right = str.length - 1;
+  let isPalindrome = true;
+  while (left < right && isPalindrome) {
+    if (str[left] !== str[right]) {
+      isPalindrome = false;
+    } else {
+      left++;
+      right--;
+    }
+  }
+  return isPalindrome;
 }
