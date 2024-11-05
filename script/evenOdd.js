@@ -7,7 +7,7 @@ Sommiamo i due numeri
 Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto.
  */
-
+console.log("GIOCHIAMO A PARI E DISPARI");
 // inizializzazione con prompt e dichiarazioni
 let choiceUser = prompt("Scegli pari o dispari");
 
@@ -17,12 +17,12 @@ const numberBot = getRndInteger(1, 5);
 const sum = numberUser + numberBot;
 
 choiceUser = choiceUser.toLocaleLowerCase();
-console.log(`
-    Scelta dell'utente: ${choiceUser}
+console.log(
+`    Scelta dell'utente: ${choiceUser}
     Numero dell'utente: ${numberUser}
     Numero del bot: ${numberBot}
     Somma dei due numeri: ${sum}
-    `)
+    `);
 
 // uso costrutto switch che prende come parametro la scelta dell'utente
 switch(choiceUser){

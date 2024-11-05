@@ -23,9 +23,9 @@ result = isPalindrome2(word); //* con two pointers
 // output
 console.log("Two pointers:");
 if (result) {
-  console.log(word + " is palindrome\n");
+  console.log(word + " is palindrome\n\n");
 } else {
-  console.log(word + " is not palindrome\n");
+  console.log(word + " is not palindrome\n\n");
 }
 
 
