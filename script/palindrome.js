@@ -5,29 +5,30 @@ Chiedere all’utente di inserire una parola
 Creare una funzione per capire se la parola inserita è palindroma
 */
 
-console.log("ES STRINGA PALINDROMA");
-// inizializzazione con prompt
-const word = prompt("Inserisci una parola");    //! assunzione: utente non lascia mai null
-// chiamata di funzione per verificare se la stringa passata come parametro è palindroma
-// e salvo il valore ritornato in una variabile
-let result = isPalindrome(word); //* funzione cheatcode
-// output
-console.log("Cheatcode:");
-if (result) {
-  console.log(word + " is palindrome");
-} else {
-  console.log(word + " is not palindrome");
-}
+function palindrome() {
+  console.log("GIOCHIAMO A PALINDROME");
+  // inizializzazione con prompt
+  const word = prompt("Inserisci una parola"); //! assunzione: utente non lascia mai null
+  // chiamata di funzione per verificare se la stringa passata come parametro è palindroma
+  // e salvo il valore ritornato in una variabile
+  let result = isPalindrome(word); //* funzione cheatcode
+  // output
+  console.log("Cheatcode:");
+  if (result) {
+    console.log(word + " is palindrome");
+  } else {
+    console.log(word + " is not palindrome");
+  }
 
-result = isPalindrome2(word); //* con two pointers
-// output
-console.log("Two pointers:");
-if (result) {
-  console.log(word + " is palindrome\n\n");
-} else {
-  console.log(word + " is not palindrome\n\n");
+  result = isPalindrome2(word); //* con two pointers
+  // output
+  console.log("Two pointers:");
+  if (result) {
+    console.log(word + " is palindrome\n\n");
+  } else {
+    console.log(word + " is not palindrome\n\n");
+  }
 }
-
 
 //* FUNCTIONS
 /**
