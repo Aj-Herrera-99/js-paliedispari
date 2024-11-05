@@ -21,15 +21,15 @@ function evenOdd() {
     const victoryText = "Hai vinto!!";
     const defeatText = "Hai perso ! :(";
 
-    choiceUser = choiceUser.toLocaleLowerCase();
+    choiceUser = choiceUser.trim().toLocaleLowerCase();
     console.log(
-      `    Scelta dell'utente: ${choiceUser}
-    Numero dell'utente: ${numberUser}
-    Numero del bot: ${numberBot}
-    Somma dei due numeri: ${sum}
-    `
+        `    Scelta dell'utente: ${choiceUser}
+        Numero dell'utente: ${numberUser}
+        Numero del bot: ${numberBot}
+        Somma dei due numeri: ${sum}
+        `
     );
-
+    
     // uso costrutto switch che prende come parametro la scelta dell'utente
     switch (choiceUser) {
       case "pari":

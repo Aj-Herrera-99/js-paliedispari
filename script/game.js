@@ -6,6 +6,9 @@ let game = prompt(
     - palindrome
     - evenOdd`);
 
+if(game === null){
+    game = "";
+}
 game = game.toLocaleLowerCase();
 
 const welcomeText = "Ottimo! Hai scelto: " + game;
