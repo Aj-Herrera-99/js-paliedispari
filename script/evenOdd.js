@@ -13,8 +13,7 @@ function evenOdd() {
   let choiceUser = prompt("Scegli pari o dispari");
   const noChoiceText = "Non hai scelto nè pari nè dispari";
 
-  choiceUser = choiceUser.trim();
-  if (choiceUser !== null && choiceUser.length) {
+  if (choiceUser !== null && choiceUser.trim().length) {
     const numberUser = numberFromPromptWithRange(1, 5);
     const numberBot = getRndInteger(1, 5);
 
